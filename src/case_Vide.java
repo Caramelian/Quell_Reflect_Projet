@@ -64,11 +64,9 @@ public class case_Vide extends Case {
 				if(piece == true){
 				change_Etat_Piece();
 				actualiser_Piece();
-				
+				}
 			}
-		}
-		
-
-		// end-user-code
+		}		// end-user-code
 	}
 }
+
