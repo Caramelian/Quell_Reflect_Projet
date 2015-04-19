@@ -59,7 +59,8 @@ public class bloc_Sexue extends objet_Mouvant {
 		// Pour l'instant, il y a des erreurs sur cette méthode 
 		
 		if ((this.male == true).x == (this.male == false).x && (this.male == true).y == (this.male == false).y) {
-			delete this;
+			this.x = null;
+			this.y = null;
 		}
 	}
 
