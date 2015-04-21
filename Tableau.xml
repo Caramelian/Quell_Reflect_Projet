@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!DOCTYPE data SYSTEM "Grammaire.dtd">
+
 <data>
 	<level number="1">
 		<length> 15 </length>
@@ -8,11 +10,11 @@
 		<Anneau>
 			<coordinateX> 2 </coordinateX>
 			<coordinateY> 14 </coordinateY>
-			<color> blue </color>
+			<color> 1 </color>
 			<partner>
 				<coordinateX> 7 </coordinateX>
 				<coordinateY> 1 </coordinateY>
-				<color> blue </color>
+				<color> 1 </color>
 			</partner>
 		</Anneau>
 		<bloc_Sexue>
@@ -416,7 +418,7 @@
 			<coordinateY> 15 </coordinateY>
 		</Mur>
 		<Mur>
-			<jewel> false </jewel>
+			<jewel> true </jewel>
 			<coordinateX> 3 </coordinateX>
 			<coordinateY> 2 </coordinateY>
 		</Mur>

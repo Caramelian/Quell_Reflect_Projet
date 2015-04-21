@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT data (level)+ >
+<!ELEMENT level (length, width, numberOfCoins, Anneau+ | bloc_Sexue+ | Bulle+ | case_Verte+ | case_Vide+ | Mur+ | Pic+ | Switcher+) >
+<!ATTLIST level number ID mode >
+<!ELEMENT Anneau (coordinateX, coordinateY, color, partner) >
+<!ELEMENT partner (coordinateX, coordinateY, color) >
+<!ELEMENT bloc_Sexue (male, coordinateX, coordinateY) >
+<!ELEMENT Bulle (selection, order, coordinateX, coordinateY) >
+<!ELEMENT case_Verte (coordinateX, coordinateY) >
+<!ELEMENT case_Vide (coordinateX, coordinateY, piece) >
+<!ELEMENT Mur (jewel, coordinateX, coordinateY) >
+<!ELEMENT Pic (up, down, right, left, color, coordinateX, coordinateY) >
+<!ELEMENT length (#PCDATA) >
+<!ELEMENT width (#PCDATA) >
+<!ELEMENT numberOfCoins (#PCDATA) >
+<!ELEMENT coordinateX (#PCDATA) >
+<!ELEMENT coordinateY (#PCDATA) >
+<!ELEMENT color (#PCDATA) >
+<!ELEMENT male (#PCDATA) >
+<!ELEMENT selection (#PCDATA) >
+<!ELEMENT order (#PCDATA) >
+<!ELEMENT piece (#PCDATA) >
+<!ELEMENT jewel (#PCDATA) >
+<!ELEMENT up (#PCDATA) >
+<!ELEMENT down (#PCDATA) >
+<!ELEMENT right (#PCDATA) >
+<!ELEMENT left (#PCDATA) >
