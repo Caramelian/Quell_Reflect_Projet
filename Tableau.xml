@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<data>
+	<level number="1">
+		<length> 15 </length>
+		<width> 8 </width>
+		<numberOfCoins> 2 </numberOfCoins>
+		<Anneau>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+			<color> blue </color>
+			<partner>
+				<coordinateX> 7 </coordinateX>
+				<coordinateY> 1 </coordinateY>
+				<color> blue </color>
+			</partner>
+		</Anneau>
+		<bloc_Sexue>
+			<male> true </male>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+		</bloc_Sexue>
+		<Bulle>
+			<selection> true </selection>
+			<order> 1 </order>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+		</Bulle>
+		<case_Verte>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+		</case_Verte>
+		<case_Verte>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+		</case_Verte>
+		<case_Verte>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 7 </coordinateY>	
+		</case_Verte>
+		<case_Verte>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 10 </coordinateY>	
+		</case_Verte>
+		<case_Verte>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 13 </coordinateY>	
+		</case_Verte>
+		<case_Verte>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 13 </coordinateY>	
+		</case_Verte>
+		<case_Vide>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 1 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 7 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 10 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 13 </coordinateY>
+			<piece> true </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 1 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 10 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 1 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 13 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 1 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 7 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 10 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 13 </coordinateY>
+			<piece> true </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 7 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 1 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 10 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<case_Vide>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+			<piece> false </piece>
+		</case_Vide>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 1 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 7 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 10 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 13 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 1 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 9 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 2 </coordinateX>
+			<coordinateY> 15 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 2 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 7 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 3 </coordinateX>
+			<coordinateY> 15 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 7 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 10 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 5 </coordinateX>
+			<coordinateY> 15 </coordinateY>
+		</Mur>	
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 1 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 6 </coordinateX>
+			<coordinateY> 15 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 3 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 4 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 8 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 10 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 11 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 13 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 7 </coordinateX>
+			<coordinateY> 15 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 5 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 6 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 7 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 12 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 13 </coordinateY>
+		</Mur>
+		<Mur>
+			<jewel> false </jewel>
+			<coordinateX> 8 </coordinateX>
+			<coordinateY> 14 </coordinateY>
+		</Mur>
+		<Pic>
+			<up> false </up>
+			<down> false </down>
+			<right> false </right>
+			<left> true </left>
+			<color> 1 </color>
+			<coordinateX> 4 </coordinateX>
+			<coordinateY> 15 </coordinateY>
+		</Pic>
+	</level>
+</data>		
+		
