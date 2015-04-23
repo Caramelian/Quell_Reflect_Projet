@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!ELEMENT data (level)+ >
-<!ELEMENT level (length, width, numberOfCoins, Anneau+ | bloc_Sexue+ | Bulle+ | case_Verte+ | case_Vide+ | Mur+ | Pic+ | Switcher+) >
+<!ELEMENT level ((length, width, numberOfCoins), ((Anneau)+ | (bloc_Sexue)+ | (Bulle)+ | (case_Verte)+ | (case_Vide)+ | (Mur)+ | (Pic)+ | (Switcher)+)) >
 <!ATTLIST level number ID mode >
 <!ELEMENT Anneau (coordinateX, coordinateY, color, partner) >
 <!ELEMENT partner (coordinateX, coordinateY, color) >

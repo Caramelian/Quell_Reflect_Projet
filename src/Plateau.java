@@ -1,6 +1,3 @@
-//import HashMap.MapforHashMap;
-import java.N
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,13 +5,106 @@ import java.net.URL;
 import java.util.Set;
 
 import javax.swing.ImageIcon;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.ParserConfigurationException;
 
+import java.io.File;
+
+import org.w3c.dom.Document;
+
+import java.io.IOException;
+
+import org.xml.sax.SAXException;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 
 public class Plateau {
 	
 	
-// Attributs de la classe Plateau
+/// Lecture du fichier XML
+	
+	public static void main(String[] args) {
+		
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			
+		try{
+			final DocumentBuilder builder = factory.newDocumentBuilder();
+			final Document document = builder.parse(new File("Tableau.xml"));
+			
+			System.out.println(document.getXmlVersion());
+			System.out.println(document.getXmlEncoding());
+			System.out.println(document.getXmlStandalone());
+			
+			// Récupérer la racine de l'arbre
+			
+			Element data = document.getDocumentElement();
+			System.out.println(data.getNodeName());
+			
+			// Récupérer les noeuds de la racine : level
+			
+			NodeList dataNoeuds = data.getChildNodes();
+			
+			int nbDataNoeuds = dataNoeuds.getLength();
+			for (int i =0 ; i<nbDataNoeuds; i++){
+				if(dataNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE){
+					Element level = (Element) dataNoeuds.item(i);
+					System.out.println(level.getNodeName());
+				}
+			}
+			
+			// Récupérer les différents éléments d'un niveau
+			
+			Element level = document.getDocumentElement();
+			NodeList levelNoeuds = level.getChildNodes();
+			
+			int nbLevelNoeuds = levelNoeuds.getLength();
+			for (int i=0 ; i<nbLevelNoeuds ; i++){
+				
+					Element length = (Element) levelNoeuds.item(0);
+					Element width = (Element) levelNoeuds.item(1);
+					Element numberOfCoins = (Element) levelNoeuds.item(2);
+				
+					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "Anneau"){
+						Element Anneau = (Element) levelNoeuds.item(i);
+						Element coordinateX = (Element) Anneau.getElementsByTagName("coordinateX").item(i);
+						Element coordinateY = (Element) Anneau.getElementsByTagName("coordinateY").item(i);
+						Element color = (Element) Anneau.getElementsByTagName("color").item(i);
+						Element partner = (Element) Anneau.getElementsByTagName("partner");
+						NodeList partnerNoeuds = partner.getChildNodes();
+						int nbPartnerNoeuds = partnerNoeuds.getLength();
+							for (int j=0 ; j<nbPartnerNoeuds ; j++){
+								Element coordinateXPartner = (Element) partner.getElementsByTagName("coordinateX");
+								Element coordinateYPartner = (Element) partner.getElementsByTagName("coordinateY");
+								Element colorPartner = (Element) partner.getElementsByTagName("color");
+							}
+						
+						plateauDeDepart [coordinateX][coordinateY] = new Anneau (color, partner, coordinateX, coordinateY);
+						plateauDeDepart [coordinateX][coordinateY].setPartenaire (new Anneau (colorPartner, plateauDeDepart[coordinateX][coordinateY], coordinateXPartner, coordinateYPartner));
+				}
+			}
+			
+			NodeList Anneau = level.getElementsByTagName("Anneau");
+			
+		
+		}catch (final ParserConfigurationException e){
+			e.printStackTrace();
+		
+		}catch (final SAXException e){
+			e.printStackTrace();
+		
+		}catch (final IOException e){
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+	
+	
+/// Attributs de la classe Plateau
 	
 	public Case[][] plateau;               // C'est le plateau du jeu sous forme de tableau
 	
