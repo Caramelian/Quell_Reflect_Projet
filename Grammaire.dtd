@@ -2,7 +2,7 @@
 
 <!ELEMENT data (level)+ >
 <!ELEMENT level ((length, width, numberOfCoins), ((Anneau)+ | (bloc_Sexue)+ | (Bulle)+ | (case_Verte)+ | (case_Vide)+ | (Mur)+ | (Pic)+ | (Switcher)+)) >
-<!ATTLIST level number ID mode >
+<!ATTLIST level number ID "1" >
 <!ELEMENT Anneau (coordinateX, coordinateY, color, partner) >
 <!ELEMENT partner (coordinateX, coordinateY, color) >
 <!ELEMENT bloc_Sexue (male, coordinateX, coordinateY) >
