@@ -26,23 +26,30 @@ public class Plateau {
 	
 /// Lecture du fichier XML
 	
-	public static void main(String[] args) {
 		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder builder = factory.newDocumentBuilder();
+	Document document = builder.parse(new File("Tableau.xml"));
+		
+	private static Document lireDocument (DocumentBuilder builder, String Tableau){
+	
 		try{
-			final DocumentBuilder builder = factory.newDocumentBuilder();
-			final Document document = builder.parse(new File("Tableau.xml"));
-			
-			System.out.println(document.getXmlVersion());
-			System.out.println(document.getXmlEncoding());
-			System.out.println(document.getXmlStandalone());
-			
-			// Récupérer la racine de l'arbre
-			
-			Element data = document.getDocumentElement();
-			System.out.println(data.getNodeName());
-			
+			return document;
+		}catch(SAXException e){
+			System.err.println("Erreur de parsing de " + Tableau);
+		}catch(IOException e){
+			System.err.println("Entrée d'entrée/sortie sur " + Tableau);
+		}
+		return null;
+		}
+	
+	private static void afficherDocument(Document doc){
+		Element e = doc.getDocumentElement();
+		afficherElement(e);
+	}
+	
+	private static void afficherElement(Element e){
+		
 			// Récupérer les noeuds de la racine : level
 			
 			NodeList dataNoeuds = data.getChildNodes();
@@ -63,7 +70,7 @@ public class Plateau {
 			int nbLevelNoeuds = levelNoeuds.getLength();
 			for (int i=0 ; i<nbLevelNoeuds ; i++){
 				
-					Element length = (Element) levelNoeuds.item(0);
+					int length = (int) levelNoeuds.item(0).getNodeValue();
 					Element width = (Element) levelNoeuds.item(1);
 					Element numberOfCoins = (Element) levelNoeuds.item(2);
 				
@@ -99,7 +106,7 @@ public class Plateau {
 			e.printStackTrace();
 		}
 		
-	}
+	
 	
 
 	
