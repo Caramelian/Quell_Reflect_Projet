@@ -48,4 +48,6 @@ public abstract class objet_Mouvant {
 
 
 	public abstract void deplacement(int x, int y, Plateau plateau);
+	
+	public abstract ImageIcon getImage();
 }

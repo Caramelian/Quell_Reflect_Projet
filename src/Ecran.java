@@ -42,9 +42,9 @@ public class Ecran extends JPanel {
 				this.gbc.gridx = i;
 				this.gbc.gridy = j;
 
-				if (this.grille.objet_Mouvant.length > 0
-						&& (this.grille.objet_Mouvant[a].x == i && this.grille.objet_Mouvant[a].y == j)) {
-					image = this.grille.objet_Mouvant[a].getImage();
+				if (this.grille.objetMouvant.length > 0
+						&& (this.grille.objetMouvant[a].x == i && this.grille.objetMouvant[a].y == j)) {
+					image = this.grille.objetMouvant[a].getImage();
 				} else {
 
 					image = this.grille.plateau[i][j].getImage();
