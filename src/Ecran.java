@@ -9,8 +9,9 @@ import java.io.IOException;
 public class Ecran extends JPanel {
 
 	// Attributs
-
-	public Plateau grille;
+	
+	private static final long serialVersionUID = 1L;
+	public Plateau plateau;
 	public GridBagLayout gbl;
 	public GridBagConstraints gbc;
 
@@ -21,44 +22,52 @@ public class Ecran extends JPanel {
 		this.gbc = new GridBagConstraints();
 		this.gbc.fill = GridBagConstraints.BOTH;
 		this.setLayout(this.gbl);
-		this.grille = new Plateau(num);
+		this.plateau = new Plateau("Tableau.xml",num);
 
 		dessin();
 	}
 
-	// Dessiner
 
-	public void dessin() {
+	// Dessin
 
-		int a = 0;
-		ImageIcon image;
-		JLabel fenetre;
+		public void dessin() {
 
-		removeAll();
+			int a = 0;
+			ImageIcon image;
+			JLabel fenetre;
 
-		for (int i = 0; i < this.grille.plateau.length; i++) {
-			for (int j = 0; j < this.grille.plateau[i].length; j++) {
+			removeAll();
 
-				this.gbc.gridx = i;
-				this.gbc.gridy = j;
+			for (int i = 0; i < this.plateau.plateau.length; i++) {
+				for (int j = 0; j < this.plateau.plateau[i].length; j++) {
 
-				if (this.grille.objetMouvant.length > 0
-						&& (this.grille.objetMouvant[a].x == i && this.grille.objetMouvant[a].y == j)) {
-					image = this.grille.objetMouvant[a].getImage();
-				} else {
+					this.gbc.gridx = i;
+					this.gbc.gridy = j;
 
-					image = this.grille.plateau[i][j].getImage();
+					if (this.plateau.objetMouvant.length > 0
+							&& (this.plateau.objetMouvant[a].x == i && this.plateau.objetMouvant[a].y == j)) {
+						image = this.plateau.objetMouvant[a].getImage();
+					} else {
 
-					fenetre = new JLabel(image);
+						image = this.plateau.plateau[i][j].getImage();
 
-					this.gbl.setConstraints(fenetre, this.gbc);
-					add(fenetre);
+						fenetre = new JLabel(image);
 
-					revalidate();
-					repaint();
+						this.gbl.setConstraints(fenetre, this.gbc);
+						add(fenetre);
+
+						revalidate();
+						repaint();
+					}
 				}
 			}
 		}
+		
+		// Key Listener
 
-	}
+		// Je ne suis pas sur que cette partie va nous être intéressantes.
+
 }
+			
+
+		

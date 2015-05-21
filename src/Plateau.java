@@ -43,11 +43,19 @@ public class Plateau {
 		
 	private BufferedReader entree;	
 	
+	public int nombrePiece; // donne le nombre de pièces
+	
 	
 		
 /// Lecture du fichier XML
 
 	public static void main(String[] args) {
+		
+		Plateau plateau = new Plateau("Tableau.xml", 1);
+		//plateau.start();
+	}
+
+	private void lireTableau(String nom) {
 		
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		
@@ -84,105 +92,125 @@ public class Plateau {
 			int nbLevelNoeuds = levelNoeuds.getLength();
 			for (int i=0 ; i<nbLevelNoeuds ; i++){
 				
-					Element length = (Element) levelNoeuds.item(0);					
+					Node length = levelNoeuds.item(1);					
 					int l = Integer.parseInt(length.getNodeValue());
-					Element width = (Element) levelNoeuds.item(1);
+					Node width = levelNoeuds.item(2);
 					int w = Integer.parseInt(width.getNodeValue());
-					Element numberOfCoins = (Element) levelNoeuds.item(2);
+					Node numberOfCoins = levelNoeuds.item(3);
 					int nOC = Integer.parseInt(numberOfCoins.getNodeValue());
+					Node numberOfMovingObjects = levelNoeuds.item(4);
+					int nOMO = Integer.parseInt(numberOfMovingObjects.getNodeValue());
+					
+					Case plateauDeDepart[][] = new Case[l][w];
+					objet_Mouvant objetMouvant[] = new objet_Mouvant[nOMO];
+					Case plateau[][] = plateauDeDepart;
+					
 				
 					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "Anneau"){
 						Element Anneau = (Element) levelNoeuds.item(i);
-						Element coordinateX = (Element) Anneau.getElementsByTagName("coordinateX").item(i);
+						NodeList anneauNoeuds = Anneau.getChildNodes();
+						Node coordinateX = anneauNoeuds.item(1);
 						int x = Integer.parseInt(coordinateX.getNodeValue());
-						Element coordinateY = (Element) Anneau.getElementsByTagName("coordinateY").item(i);
+						Node coordinateY = anneauNoeuds.item(2);
 						int y = Integer.parseInt(coordinateY.getNodeValue());
-						Element color = (Element) Anneau.getElementsByTagName("color").item(i);
+						Node color = anneauNoeuds.item(3);
 						int c = Integer.parseInt(color.getNodeValue());
-						Element partner = (Element) Anneau.getElementsByTagName("partner");
-						NodeList partnerNoeuds = partner.getChildNodes();
-						int nbPartnerNoeuds = partnerNoeuds.getLength();
-							for (int j=0 ; j<nbPartnerNoeuds ; j++){
-								Element coordinateXPartner = (Element) partner.getElementsByTagName("coordinateX");
-								int x1 = Integer.parseInt(coordinateXPartner.getNodeValue());
-								Element coordinateYPartner = (Element) partner.getElementsByTagName("coordinateY");
-								int y1 = Integer.parseInt(coordinateYPartner.getNodeValue());
-								Element colorPartner = (Element) partner.getElementsByTagName("color");
-								int c1 = Integer.parseInt(colorPartner.getNodeValue());
-							}
-						plateauDeDepart [x][y] = new Anneau (c, partner, x, y);
-						plateauDeDepart [x][y].setPartenaire (new Anneau (c1, plateauDeDepart[x][y], x1, y1));
-					}
-					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "bloc_Sexue"){
-						Element bloc_Sexue = (Element) levelNoeuds.item(i);
-						Element male = (Element) bloc_Sexue.getElementsByTagName("male").item(i);
-						boolean m = Boolean.parseBoolean(male.getNodeValue());
-						Element coordinateX = (Element) bloc_Sexue.getElementsByTagName("coordinateX").item(i);
-						int x = Integer.parseInt(coordinateX.getNodeValue());
-						Element coordinateY = (Element) bloc_Sexue.getElementsByTagName("coordinateY").item(i);
-						int y = Integer.parseInt(coordinateY.getNodeValue());
 						
-						plateauDeDepart [x][y] = new bloc_Sexue (m, x, y, plateau);
+						plateauDeDepart [x][y] = new Anneau (c, x, y);
+						
+						Element partner = (Element) anneauNoeuds.item(4);
+						NodeList partnerNoeuds = partner.getChildNodes();
+						Node coordinateXPartenaire = partnerNoeuds.item(1);
+						int xPartenaire = Integer.parseInt(coordinateXPartenaire.getNodeValue());
+						Node coordinateYPartenaire = partnerNoeuds.item(2);
+						int yPartenaire = Integer.parseInt(coordinateYPartenaire.getNodeValue());
+						Node colorPartenaire = partnerNoeuds.item(3);
+						int cPartenaire = Integer.parseInt(colorPartenaire.getNodeValue());
+						
+						plateauDeDepart [xPartenaire][yPartenaire] = new Anneau (cPartenaire, xPartenaire, yPartenaire);
 					}
+					
 					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "Bulle"){
 						Element Bulle = (Element) levelNoeuds.item(i);
-						Element selection = (Element) Bulle.getElementsByTagName("selection").item(i);
+						NodeList bulleNoeuds = Bulle.getChildNodes();
+						Node selection = bulleNoeuds.item(1);
 						boolean s = Boolean.parseBoolean(selection.getNodeValue());
-						Element order = (Element) Bulle.getElementsByTagName("coordinateX").item(i);
+						Node order = bulleNoeuds.item(2);
 						int o = Integer.parseInt(order.getNodeValue());
-						Element coordinateX = (Element) Bulle.getElementsByTagName("coordinateX").item(i);
+						Node coordinateX = bulleNoeuds.item(3);
 						int x = Integer.parseInt(coordinateX.getNodeValue());
-						Element coordinateY = (Element) Bulle.getElementsByTagName("coordinateY").item(i);
+						Node coordinateY = bulleNoeuds.item(4);
 						int y = Integer.parseInt(coordinateY.getNodeValue());
 						
-						plateauDeDepart [x][y] = new bloc_Sexue (s, o, x, y, plateau);
+						objetMouvant [i] = new Bulle (s, o, x, y, this);
 					}
+					
+					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "bloc_Sexue"){
+						Element bloc_Sexue = (Element) levelNoeuds.item(i);
+						NodeList bloc_SexueNoeuds = bloc_Sexue.getChildNodes();
+						Node male = bloc_SexueNoeuds.item(1);
+						boolean m = Boolean.parseBoolean(male.getNodeValue());
+						Node coordinateX = bloc_SexueNoeuds.item(2);
+						int x = Integer.parseInt(coordinateX.getNodeValue());
+						Node coordinateY = bloc_SexueNoeuds.item(3);
+						int y = Integer.parseInt(coordinateY.getNodeValue());
+						
+						objetMouvant [i] = new bloc_Sexue (m, x, y, this);
+					}
+						
 					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "case_Verte"){
 						Element case_Verte = (Element) levelNoeuds.item(i);
-						Element coordinateX = (Element) case_Verte.getElementsByTagName("coordinateX").item(i);
+						NodeList case_VerteNoeuds = case_Verte.getChildNodes();
+						Node coordinateX = case_VerteNoeuds.item(1);
 						int x = Integer.parseInt(coordinateX.getNodeValue());
-						Element coordinateY = (Element) case_Verte.getElementsByTagName("coordinateY").item(i);
+						Node coordinateY = case_VerteNoeuds.item(2);
 						int y = Integer.parseInt(coordinateY.getNodeValue());
 						
 						plateauDeDepart [x][y] = new case_Verte (x, y);
 					}
+					
 					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "case_Vide"){
 						Element case_Vide = (Element) levelNoeuds.item(i);
-						Element piece = (Element) case_Vide.getElementsByTagName("piece").item(i);
+						NodeList case_VideNoeuds = case_Vide.getChildNodes();
+						Node piece = case_VideNoeuds.item(3);
 						boolean p = Boolean.parseBoolean(piece.getNodeValue());
-						Element coordinateX = (Element) case_Vide.getElementsByTagName("coordinateX").item(i);
+						Node coordinateX = case_VideNoeuds.item(1);
 						int x = Integer.parseInt(coordinateX.getNodeValue());
-						Element coordinateY = (Element) case_Vide.getElementsByTagName("coordinateY").item(i);
+						Node coordinateY = (Element) case_VideNoeuds.item(2);
 						int y = Integer.parseInt(coordinateY.getNodeValue());
 												
 						plateauDeDepart [x][y] = new case_Vide (p, x, y);
 					}
+					
 					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "Mur"){
 						Element Mur = (Element) levelNoeuds.item(i);
-						Element jewel = (Element) Mur.getElementsByTagName("jewel").item(i);
+						NodeList murNoeuds = Mur.getChildNodes();
+						Node jewel = murNoeuds.item(1);
 						boolean j = Boolean.parseBoolean(jewel.getNodeValue());
-						Element coordinateX = (Element) Mur.getElementsByTagName("coordinateX").item(i);
+						Node coordinateX = murNoeuds.item(2);
 						int x = Integer.parseInt(coordinateX.getNodeValue());
-						Element coordinateY = (Element) Mur.getElementsByTagName("coordinateY").item(i);
+						Node coordinateY = murNoeuds.item(3);
 						int y = Integer.parseInt(coordinateY.getNodeValue());
 												
 						plateauDeDepart [x][y] = new Mur (j, x, y);
 					}
+					
 					if (levelNoeuds.item(i).getNodeType() == Node.ELEMENT_NODE && levelNoeuds.item(i).getNodeName() == "Pic"){
 						Element Pic = (Element) levelNoeuds.item(i);
-						Element up = (Element) Pic.getElementsByTagName("up").item(i);
+						NodeList picNoeuds = Pic.getChildNodes();
+						Node up = picNoeuds.item(1);
 						boolean u = Boolean.parseBoolean(up.getNodeValue());
-						Element down = (Element) Pic.getElementsByTagName("down").item(i);
+						Node down = picNoeuds.item(2);
 						boolean d = Boolean.parseBoolean(down.getNodeValue());
-						Element right = (Element) Pic.getElementsByTagName("right").item(i);
+						Node right = picNoeuds.item(3);
 						boolean r = Boolean.parseBoolean(right.getNodeValue());
-						Element left = (Element) Pic.getElementsByTagName("left").item(i);
+						Node left = picNoeuds.item(4);
 						boolean le = Boolean.parseBoolean(left.getNodeValue());
-						Element color = (Element) Pic.getElementsByTagName("color").item(i);
+						Node color = picNoeuds.item(5);
 						int c = Integer.parseInt(color.getNodeValue());
-						Element coordinateX = (Element) Pic.getElementsByTagName("coordinateX").item(i);
+						Node coordinateX = picNoeuds.item(6);
 						int x = Integer.parseInt(coordinateX.getNodeValue());
-						Element coordinateY = (Element) Pic.getElementsByTagName("coordinateY").item(i);
+						Node coordinateY = picNoeuds.item(7);
 						int y = Integer.parseInt(coordinateY.getNodeValue());
 												
 						plateauDeDepart [x][y] = new Pic (u, d, r, le, c, x, y);
@@ -202,11 +230,12 @@ public class Plateau {
 		
 	
 	
-// Constructeur du plateau (non-terminée)
-	
-	public Plateau(int num){
-	
-	// Enregistrement des images correspondant aux objets
+	// Constructeur du plateau (non-terminée)
+
+	public Plateau(String nomFichier, int num) {
+		
+		lireTableau(nomFichier);
+
 	
 	// Pour le moment j'ai considéré 2 paires d'anneaux et un type d'interrupteur.
 	// ATTENTION : Je n'ai pas mis les images pour les pics et les interrupteurs.
@@ -256,20 +285,20 @@ public class Plateau {
 	Pic.image4=pic1gaucheHautDroite;
 	Pic.image5=pic1total;
 	Switcher.image=interrupteur;
-		
+	}		
 	
 		
 // Méthodes
-	
+		
 	public objet_Mouvant[] getObjet_mouvant() {
 		// begin-user-code
-		return objet_Mouvant;
+		return objetMouvant;
 		// end-user-code
 	}
 
 	public void setObjet_mouvant(objet_Mouvant[] objet_mouvant) {
 		// begin-user-code
-		this.objet_Mouvant = objet_mouvant;
+		this.objetMouvant = objet_mouvant;
 		// end-user-code
 	}
 
@@ -310,9 +339,11 @@ public class Plateau {
 
 	public String gagnant() {
 	// Il manque à écrire dans quelles conditions ce message s'affiche	
-	if (nombre_Piece == 0){
+	if (nombrePiece == 0){
 		String gagnant = "Vous avez gagné";
 		return gagnant;
+	}else{
+		return "";
 	}
 	}
 
@@ -323,8 +354,8 @@ public class Plateau {
 
 
 	public int actualiser_Piece() {
-		nombre_Piece = nombre_Piece - 1;
-		return nombre_Piece;
+		nombrePiece = nombrePiece - 1;
+		return nombrePiece;
 	}
 
 

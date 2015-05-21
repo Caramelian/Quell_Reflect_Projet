@@ -25,5 +25,5 @@ public abstract class Case {
 
 // Méthode concernant le déplacement
 	
-	public abstract void deplacement(int Parameter1, objet_Mouvant Parameter2);
+	public abstract boolean deplacement(objet_Mouvant Parameter2);
 }

@@ -79,9 +79,11 @@ public class Mur extends Case {
 				}
 			}
 
-	// Déplacement
-	public void deplacement(int Parameter1, objet_Mouvant Parameter2) {
-		// Première étape est d'effectuer la récolte de joyau
-		this.recolte_Joyau();
-	}
-}
+			// Déplacement
+			public boolean deplacement(objet_Mouvant Parameter2) {
+				// Première étape est d'effectuer la récolte de joyau
+				this.recolte_Joyau();
+				return false;
+				
+			}
+		}

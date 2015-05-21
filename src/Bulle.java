@@ -96,18 +96,78 @@ public class Bulle extends objet_Mouvant {
 	
 	// Gestion disparition et déplacement
 
-	public void disparition(int x, int y, Plateau plateau) {
+	public void disparition(Plateau plateau) {
 		
 		// Voir ce qu'on supprime
 		
 	}
 
-	public void deplacement(int x, int y, Plateau plateau) {
-	// Si vous êtes d'accord, on peut ptet mettre la même chose que pour bloc_Sexue avec les directions ?	
-		
-		// begin-user-code
-	
+	public void deplacement(Plateau plateau) {
 
-		// end-user-code
+		boolean voisin = false; // Indique s'il y a un voisin sur la future case où doit se déplacer la bulle
+		this.mouvement = true;
+
+		// On obtient les coordonnées de la future position de la bulle si le
+		// déplacement est possible
+		// Je pense qu'il faudra effectuer un genre de test pour être sur qu'on
+		// a bien une direction, pour que la droite puisse être d
+		// et pas seulement un else
+
+		int xNxt;
+		int yNxt;
+
+		if (this.sens == "haut") {
+			xNxt = this.x;
+			yNxt = this.y + 1;
+		}
+		if (this.sens == "bas") {
+			xNxt = this.x;
+			yNxt = this.y - 1;
+		}
+		if (this.sens == "gauche") {
+			xNxt = this.x - 1;
+			yNxt = this.y;
+		} else {
+			xNxt = this.x + 1;
+			yNxt = this.y;
+		}
+		// On vérifie qu'il n'y a pas de voisin sur la case suivante
+		int i = 0;
+		while (i < plateau.objetMouvant.length) {
+			if (plateau.objetMouvant[i].x == xNxt
+					&& plateau.objetMouvant[i].y == yNxt) {
+				voisin = true;
+			}
+			i++;
+			// On considère qu'on lance l'objet voisin peut importe sa nature
+			if (voisin) {
+				plateau.objetMouvant[i - 1].deplacement(plateau);
+				if (plateau.objetMouvant[i - 1].isMouvement() == false) {
+					this.mouvement = false;
+				} else {
+					this.deplacement(plateau);
+				}
+			} else {
+				if (plateau.plateau[xNxt][yNxt] instanceof Anneau) {
+
+					// Il faudrait pouvoir connaitre les coordonnées du
+					// partenaire. Dans le cas où les coordonnées du partenaire
+					// sont mis en
+					// attribut ca donne
+					// this.x = plateau.plateau[xNxt][yNxt].getXPartenaire();
+					// this.y = plateau.plateau[xNxt][yNxt].getYPartenaire();
+
+				}
+				if (plateau.plateau[xNxt][yNxt].deplacement(this)) {
+					this.x = xNxt;
+					this.y = yNxt;
+					this.deplacement(plateau);
+				}
+
+			}
+
+		}
+		// Si vous êtes d'accord, on peut ptet mettre la même chose que pour bloc_Sexue avec les directions ?
 	}
 }
+

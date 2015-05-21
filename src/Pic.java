@@ -47,27 +47,28 @@ public class Pic extends Case {
 				
 		for (int i=0; i<=3; i++){
 			
-			if(positionPic(i)==true){
+			if(positionPic[i] == true){
 				nombrePic++;
 			}
 		}
 		
-		if ( nombrePic==1 ){
-			return image1;
-		}
-		if ( nombrePic==3 ){
+		if (nombrePic == 3) {
 			return image4;
 		}
-		if ( nombrePic==4){
+		if (nombrePic == 4) {
 			return image5;
 		}
-		if (nombrePic==2){
-			if ((haut == true && bas == true) || (gauche == true && droite == true) ){
+		if (nombrePic == 2) {
+			if ((this.haut == true && this.bas == true)
+					|| (this.gauche == true && this.droite == true)) {
 				return image3;
-			}
-			else return image2;
-		}	
+			} else
+				return image2;
+		} else {
+			return image1;
+		}
 	}
+
 
 	public static void setImage(ImageIcon image) {
 		Pic.image1 = image;
@@ -144,20 +145,39 @@ public class Pic extends Case {
 		// end-user-code
 	}
 	
-	public void rotation(int Parameter1) {
-		// begin-user-code
-		// TODO Auto-generated method stub
+	public void rotation(String sens) {
+		if (sens == "gauche") {
+			// rotation vers la gauche
+			boolean transitoire = this.haut;
+			this.haut = this.droite;
+			this.droite = this.bas;
+			this.bas = this.gauche;
+			this.gauche = transitoire;
+		} else {
+			// Rotation vers la droite
+			boolean transitoire = this.haut;
+			this.haut = this.gauche;
+			this.gauche = this.bas;
+			this.bas = this.droite;
+			this.droite = transitoire;
+		}
 
-		// end-user-code
 	}
+
 	
 	
 	// Déplacement
 	
-	public void deplacement(int Parameter1, objet_Mouvant Parameter2) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
+	public boolean deplacement(objet_Mouvant Parameter2) {
+		if (Parameter2 instanceof Bulle) {
+			if ((Parameter2.sens == "haut" && this.bas)
+					|| (Parameter2.sens == "bas" && this.haut)
+					|| (Parameter2.sens == "gauche" && this.droite)
+					|| (Parameter2.sens == "droite" && this.gauche)) {
+				Parameter2.disparition(Parameter2.plateau);
+			}
+		}
+		return false;
 	}
 }
+

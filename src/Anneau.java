@@ -11,8 +11,6 @@ public class Anneau extends Case {
 	
 	private int couleur;  // Couleur d'association des anneaux
 	
-	private Anneau partenaire; // Un anneau se lie avec un autre anneau, ils vont forcement par deux. Il faudra surement l'ajouter dans le test.
-	
 	public static ImageIcon image1;
 	
 	public static ImageIcon image2;
@@ -21,10 +19,9 @@ public class Anneau extends Case {
 	
 // Constructeur
 	
-	public Anneau(int couleur, Anneau partenaire, int x, int y) {
+	public Anneau(int couleur, int x, int y) {
 		super(x,y);
 		this.couleur = couleur;
-		this.partenaire = partenaire;
 	}
 	
 	
@@ -59,24 +56,22 @@ public class Anneau extends Case {
 		// end-user-code
 	}
 	
-	public Anneau getPartenaire(){
-		return partenaire;
-	}
-	
-	public void setPartenaire(Anneau partenaire){
-		this.partenaire = partenaire;
-	}
-	
-	
+	// Méthode pour le partnaire si on place les coordonnées directement en private attribut;
+		public int getXPartenaire(){
+			return xPartenaire;
+		}
+		public int getYPartenaire(){
+			return yPartenaire;
+		}
+
+		
 	// Méthode pour le déplacement
 
-	public void deplacement(int Parameter1, objet_Mouvant Parameter2) {
-		// begin-user-code
-		if (Parameter2.x == this.x && Parameter2.y == this.y){
-			Parameter2.x = this.getPartenaire().x;
-			Parameter2.y = this.getPartenaire().y;
-			Parameter1 = Parameter1;
+	public boolean deplacement(objet_Mouvant Parameter2) {
+
+		if (Parameter2.x == this.x && Parameter2.y == this.y) {
+			
+		}	
+			return true;
 		}
-		// end-user-code
 	}
-}

@@ -17,6 +17,8 @@ public abstract class objet_Mouvant {
 	public int xi; // Coordonnées initales
 	public int yi;
 	
+	public String sens;
+	
 	
 // Constructeur
 	
@@ -26,6 +28,7 @@ public abstract class objet_Mouvant {
 		this.y = y;
 		this.xi = x;
 		this.yi = y;
+		this.sens = "";
 		}
 	
 
@@ -41,13 +44,25 @@ public abstract class objet_Mouvant {
 		this.plateau = plateau;
 		// end-user-code
 	}
+	
+	public boolean isMouvement() {
+		// begin-user-code
+		return mouvement;
+		// end-user-code
+	}
+
+	public void setMouvement(boolean mouvement) {
+		// begin-user-code
+		this.mouvement = mouvement;
+		// end-user-code
+	}
 
 
+	public abstract void disparition(Plateau plateau);
 
-	public abstract void disparition(int x, int y, Plateau plateau);
 
-
-	public abstract void deplacement(int x, int y, Plateau plateau);
+	public abstract void deplacement(Plateau plateau);
+	
 	
 	public abstract ImageIcon getImage();
 }

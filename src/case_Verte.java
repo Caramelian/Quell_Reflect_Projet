@@ -58,27 +58,15 @@ public class case_Verte extends Case {
 	
 	// Déplacement
 
-	public void deplacement(int Parameter1, objet_Mouvant Parameter2) {
-		if (Parameter2.x == this.x && Parameter2.y == this.y){
-			this.changement_Obstacle(Parameter2);
-		}
-		if (passante == true){
-			if (Parameter1 == 1){ // direction vers la droite
-			Parameter2.y = Parameter2.y + 1;
-			}
-			if (Parameter1 == 2){ // direction vers le haut
-			Parameter2.x = Parameter2.x - 1;
-			}
-			if (Parameter1 == 3){ // direction vers la gauche
-			Parameter2.y = Parameter2.y - 1;	
-			}
-			if (Parameter1 == 4){ // direction vers le bas
-			Parameter2.x = Parameter2.x + 1;	
-			}
-		}
-		if (passante == false){
-			Parameter2.x = Parameter2.x;
-			Parameter2.y = Parameter2.y;
-		}
+	public boolean deplacement(objet_Mouvant Parameter2) {
+		// Je pense que le changement d'obstacle devrait se gérer au niveau de l'objet mouvant
+				if (this.passante == false) {
+					return false;
+				} else {
+					this.passante = false;
+					return true;
+				}
+
 	}
 }
+

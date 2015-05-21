@@ -57,16 +57,16 @@ public class case_Vide extends Case {
 	
 	// Déplacement
 
-	public void deplacement(int Parameter1, objet_Mouvant Parameter2) {
-		// begin-user-code
-		if (Parameter2 instanceof Bulle){
-			if(Parameter2.x == this.x && Parameter2.y == this.y){
-				if(piece == true){
-				change_Etat_Piece();
-				actualiser_Piece();
+	public boolean deplacement(objet_Mouvant Parameter2) {
+		if (Parameter2 instanceof Bulle) {
+			if (Parameter2.x == this.x && Parameter2.y == this.y) {
+				if (this.piece == true) {
+					change_Etat_Piece();
 				}
 			}
-		}		// end-user-code
+		}
+		return true;
 	}
 }
+
 
